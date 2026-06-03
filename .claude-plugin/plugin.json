@@ -1,0 +1,9 @@
+{
+  "name": "cad",
+  "description": "Skills to assist with Computer-aided Development",
+  "version": "1.0.0",
+  "author": {
+    "name": "Computer-aided Development"
+  },
+  "repository": "https://github.com/mlanett/skills"
+}

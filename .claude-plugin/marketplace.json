@@ -1,0 +1,16 @@
+{
+  "name": "cad",
+  "owner": {
+    "name": "Computer-aided Development"
+  },
+  "metadata": {
+    "description": "Best practices for Computer-aided Development"
+  },
+  "plugins": [
+    {
+      "name": "cad",
+      "source": "./",
+      "description": "Best practices for Computer-aided Development"
+    }
+  ]
+}
