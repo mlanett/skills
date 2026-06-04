@@ -1,0 +1,42 @@
+# rumdl configuration file
+# See: https://github.com/rvben/rumdl#configuration
+
+[global]
+enable = []
+disable = ["MD013", "MD029", "MD046"]
+include = ["**/*.md", "**/*.markdown"]
+
+[MD003]
+style = "atx"  # Use ATX style headings (##)
+
+[MD005]
+# Ensures all list items at the same level use the same indentation
+
+[MD007]
+# unordered list indentation
+indent = 3 # Close to text-aligned without being incompatible with markdownlint.
+style = "fixed"
+
+# Rule-specific configuration
+[MD013]
+# Line length should not be excessive
+line-length = 0
+code_blocks = false
+tables = false
+
+[MD029]
+# Use consistent numbers for ordered lists
+style = "ordered"
+
+[MD046]
+# Fenced code blocks
+
+[MD060]
+# Tables in Markdown are significantly easier to read and maintain when their columns are properly aligned in source form.
+# While Markdown tables render the same regardless of spacing, aligned tables in source code:
+# Improve readability during code review
+# Make editing cells more intuitive
+# This rule enforces consistent column alignment and padding in Markdown tables, matching the behavior of popular formatters like Prettier.
+enabled = true
+style = "aligned"
+max-width = 999 # 0 = inherit from MD013's line-length but doesn't work correctly.
