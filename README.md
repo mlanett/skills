@@ -4,7 +4,6 @@
 
 - distributed-systems: Use to build or review a robust distributed system.
 - plain-english: Use when writing human-oriented documents, specs, or TDDs.
-- tech-style: Use when writing specs or TDDs.
 
 ## Installation
 
