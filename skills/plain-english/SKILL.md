@@ -1,12 +1,10 @@
 ---
 name: plain-english
 description: Use when writing human-oriented documents.
+credits: Inspired by [Jacob Kaplan-Moss](https://jacobian.org/2009/nov/11/technical-style/) and Strunk & White's Elements of Style.
 ---
 
 # Plain English Technical Writing Style Guide
-
-> Inspired by [Jacob Kaplan-Moss](https://jacobian.org/2009/nov/11/technical-style/)
-> and Strunk & White's Elements of Style.
 
 Write in short paragraphs; avoid sentence fragments and staccato sentences.
 
