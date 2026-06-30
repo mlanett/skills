@@ -1,9 +1,9 @@
 ---
-name: distributed-systems
+name: distributed-systems-checklist
 description: Use to build or review a robust distributed system.
 ---
 
-# Distributed Systems Design Guide
+# Distributed Systems Checklist
 
 Entities:
 
