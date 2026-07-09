@@ -13,6 +13,10 @@ Sections in order. The spec reads top-down: high-level first, then details, then
 
 - Table of contents.
 
+### Open Questions
+
+Let's put this at the top so that people who are familiar with the proposal can focus on the important immediate decisions.
+
 ### High-level (read top-down)
 
 - Goals: three subsections:
