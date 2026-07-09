@@ -1,4 +1,4 @@
-# Computer-aided Development
+# Skills
 
 ## Table of Contents
 
@@ -7,7 +7,19 @@
 
 ## Installation
 
-### Claude Code
+### Everything
+
+This month (July '26), I find this to be a good installation method:
+
+git clone github.com/mlanett/skills ~/.agents            # Take over the user global skills.
+mkdir -p ~/.cursor/ && ln -s ~/.agents/skills ~/.cursor/ # Take over Cursor skills.
+mkdir -p ~/.claude/ && ln -s ~/.agents/skills ~/.claude/ # Take over Claude skills.
+
+## Everything Else
+
+- pnpx skills update --global
+
+### Claude Code (aka The Anthropic Way)
 
 #### Add the marketplace (one-time)
 
@@ -15,9 +27,9 @@
 
 #### Install the plugin
 
-`/plugin install cad@mlanett`
+`/plugin install gsd@mlanett`
 
-After installation, skills are available as `/cad:skill-name` (e.g., `/cad:plain-text`).
+After installation, skills are available as `/gsd:skill-name` (e.g., `/gsd:plain-text`).
 
 #### Auto-prompting in service repos
 
@@ -28,3 +40,10 @@ To make the marketplace available automatically in other repos, add it to `extra
   "extraKnownMarketplaces": ["mlanett/skills"]
 }
 ```
+
+## Debugging
+
+cd ~
+ls -ald .agents .cursor .claude
+ls -ald .agents/skills .cursor/skills .claude/skills
+jq -r '.skills | to_entries | .[] | "\(.value.source): \(.value.skillPath)"' ~/.agents/.skill-lock.json | sort

@@ -1,16 +1,16 @@
 {
-  "name": "cad",
+  "name": "gsd",
   "owner": {
-    "name": "Computer-aided Development"
+    "name": "Getting Stuff Done"
   },
   "metadata": {
-    "description": "Best practices for Computer-aided Development"
+    "description": "Best practices for Getting Stuff Done"
   },
   "plugins": [
     {
-      "name": "cad",
+      "name": "gsd",
       "source": "./",
-      "description": "Best practices for Computer-aided Development"
+      "description": "Best practices for Getting Stuff Done"
     }
   ]
 }
