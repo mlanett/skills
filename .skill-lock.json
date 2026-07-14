@@ -1,0 +1,204 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "76a98a285cb0434f3d39e1a873823556330e398b",
+      "installedAt": "2026-04-24T04:21:32.184Z",
+      "updatedAt": "2026-07-14T18:54:21.356Z"
+    },
+    "cp-config": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/cp-config/SKILL.md",
+      "skillFolderHash": "a0e252ccc9a82b63010ea0c4ee3f614b22280db9",
+      "installedAt": "2026-05-20T16:15:00.115Z",
+      "updatedAt": "2026-07-14T18:57:39.536Z"
+    },
+    "database-migrations": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/database-migrations/SKILL.md",
+      "skillFolderHash": "7d454243b4b6fd73f4ce1ab65e53df18a84042bc",
+      "installedAt": "2026-05-20T16:15:00.116Z",
+      "updatedAt": "2026-07-14T18:57:39.540Z"
+    },
+    "dynamic-routing": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/dynamic-routing/SKILL.md",
+      "skillFolderHash": "85d4c1643936c2757d45c73cd22c9d9c60feafdf",
+      "installedAt": "2026-05-20T16:15:00.117Z",
+      "updatedAt": "2026-07-14T18:57:39.541Z"
+    },
+    "end-to-end-tests": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/end-to-end-tests/SKILL.md",
+      "skillFolderHash": "59af5755257b65059c8bf37d35f4720ae25c5c75",
+      "installedAt": "2026-05-20T16:15:00.118Z",
+      "updatedAt": "2026-07-14T18:57:39.542Z"
+    },
+    "grpc": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/grpc/SKILL.md",
+      "skillFolderHash": "3bf1bfec0315fef62ed348c354212cd36d02331c",
+      "installedAt": "2026-05-20T16:15:00.119Z",
+      "updatedAt": "2026-07-14T18:57:39.542Z"
+    },
+    "infrastructure": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/infrastructure/SKILL.md",
+      "skillFolderHash": "97e02f7e237d19db84dfd41e536baa56ead4b14f",
+      "installedAt": "2026-05-20T16:15:00.120Z",
+      "updatedAt": "2026-07-14T18:57:39.543Z"
+    },
+    "integration-tests": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/integration-tests/SKILL.md",
+      "skillFolderHash": "3b5eefec432df9a9e9c6a693134fb64907f9f727",
+      "installedAt": "2026-05-20T16:15:00.121Z",
+      "updatedAt": "2026-07-14T18:57:39.544Z"
+    },
+    "large-data-migrations": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/large-data-migrations/SKILL.md",
+      "skillFolderHash": "ee6836282ce0fe62afeaa34841191e297a98d970",
+      "installedAt": "2026-05-20T16:15:00.122Z",
+      "updatedAt": "2026-07-14T18:57:39.544Z"
+    },
+    "snowflake-how-to": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/snowflake-how-to/SKILL.md",
+      "skillFolderHash": "2b89e5eb6c184e4633821253af32df3b5eadd345",
+      "installedAt": "2026-05-20T16:15:00.123Z",
+      "updatedAt": "2026-07-14T18:57:39.549Z"
+    },
+    "shadow-main": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/shadow-main/SKILL.md",
+      "skillFolderHash": "ebf98ccfca61ac9a2cd084e33c2bb35253a03c00",
+      "installedAt": "2026-05-20T16:15:00.124Z",
+      "updatedAt": "2026-07-14T18:57:39.548Z"
+    },
+    "setup-local-db": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/setup-local-db/SKILL.md",
+      "skillFolderHash": "2b44a721cee385b807fb0a699d330bcad22c9bb7",
+      "installedAt": "2026-05-20T16:15:00.125Z",
+      "updatedAt": "2026-07-14T18:57:39.548Z"
+    },
+    "service-clients": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/service-clients/SKILL.md",
+      "skillFolderHash": "ff7408062013f3a78d4e5d00904adcbfedb64787",
+      "installedAt": "2026-05-20T16:15:00.125Z",
+      "updatedAt": "2026-07-14T18:57:39.547Z"
+    },
+    "service-architecture": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/service-architecture/SKILL.md",
+      "skillFolderHash": "853b5c548e0ec2036b405342715e3d7f54021321",
+      "installedAt": "2026-05-20T16:15:00.126Z",
+      "updatedAt": "2026-07-14T18:57:39.547Z"
+    },
+    "pub-sub-best-practices": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/pub-sub-best-practices/SKILL.md",
+      "skillFolderHash": "c02c735e287be8f93fa346a6549e4bc7b6e8ec44",
+      "installedAt": "2026-05-20T16:15:00.127Z",
+      "updatedAt": "2026-07-14T18:57:39.546Z"
+    },
+    "protobuf-best-practices": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/protobuf-best-practices/SKILL.md",
+      "skillFolderHash": "8df25a01ba851d92bb35c2b7b2b2c09817864f67",
+      "installedAt": "2026-05-20T16:15:00.129Z",
+      "updatedAt": "2026-07-14T18:57:39.546Z"
+    },
+    "observability": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/observability/SKILL.md",
+      "skillFolderHash": "f8f491474e9b74a8b4af7795e407b2c8cd0a2be1",
+      "installedAt": "2026-05-20T16:15:00.130Z",
+      "updatedAt": "2026-07-14T18:57:39.545Z"
+    },
+    "local-development": {
+      "source": "classpass/agents",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/classpass/agents.git",
+      "skillPath": "skills/local-development/SKILL.md",
+      "skillFolderHash": "8f5282c8cf1fed0bc16d40a7f9712e328b5ef9c8",
+      "installedAt": "2026-05-20T16:15:00.131Z",
+      "updatedAt": "2026-07-14T18:57:39.545Z"
+    },
+    "system-spec-structure": {
+      "source": "mlanett/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mlanett/skills.git",
+      "skillPath": "skills/system-spec-structure/SKILL.md",
+      "skillFolderHash": "ae6ddc18f5533e00235723c10a3c8a8520cfb269",
+      "installedAt": "2026-06-10T22:43:45.361Z",
+      "updatedAt": "2026-07-14T18:54:26.927Z"
+    },
+    "plain-english": {
+      "source": "mlanett/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mlanett/skills.git",
+      "skillPath": "skills/plain-english/SKILL.md",
+      "skillFolderHash": "b1eaa2b401919020b9b89f4a853ae3a715567862",
+      "installedAt": "2026-06-11T01:48:47.674Z",
+      "updatedAt": "2026-07-14T18:54:28.583Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code"
+  ]
+}
