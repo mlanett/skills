@@ -141,9 +141,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/classpass/agents.git",
       "skillPath": "skills/protobuf-best-practices/SKILL.md",
-      "skillFolderHash": "8df25a01ba851d92bb35c2b7b2b2c09817864f67",
+      "skillFolderHash": "8f19733c6f195ae5f1a57c5fa645ba7165e11671",
       "installedAt": "2026-05-20T16:15:00.129Z",
-      "updatedAt": "2026-07-14T18:57:39.546Z"
+      "updatedAt": "2026-07-22T00:10:28.746Z"
     },
     "observability": {
       "source": "classpass/agents",
@@ -177,9 +177,9 @@
       "sourceType": "github",
       "sourceUrl": "https://github.com/mlanett/skills.git",
       "skillPath": "skills/plain-english/SKILL.md",
-      "skillFolderHash": "b1eaa2b401919020b9b89f4a853ae3a715567862",
+      "skillFolderHash": "04246d21a04f093a86f2c86a4373fc714619608d",
       "installedAt": "2026-06-11T01:48:47.674Z",
-      "updatedAt": "2026-07-14T18:54:28.583Z"
+      "updatedAt": "2026-07-22T00:10:30.251Z"
     }
   },
   "dismissed": {
