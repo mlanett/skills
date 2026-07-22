@@ -12,6 +12,7 @@ Do not explain too much. Make every word tell.
 
 Use varied structure (lists, code blocks, Mermaid diagrams for workflows).
 Avoid tables and bold; simple markdown is more readable.
+Don't manually wrap long lines of text; let them go long so the editor can render it properly.
 
 Make the structure visual: lots of section headers, callouts for especially important information.
 
@@ -21,15 +22,15 @@ Use definite, specific, concrete language; ground complex operations with exampl
 Avoid metaphors, similes, and high levels of abstraction, especially mathematical abstractions (axis, dimensions, slices).
 Use common vocabulary ("important" not "load-bearing").
 
-For plans and proposals, prefer first person plural and future tense.
-For specs, prefer third person and present tense.
+For plans and proposals, prefer first person plural and future tense ("we will…").
+For specs, prefer third person and present tense ("it does…").
 
 Use the active voice; it is more vigorous and direct than passive voice.
 
 Choose a suitable design and hold to it.
 
 Make assertions positive.
-Avoid self-negation ("it's not X, it's Y") unless there is strong reason to believe that the reader is thinking about the negated concept.
+Avoid self-negation ("it's not X, it's Y") unless there is strong reason to believe that the reader is thinking about the wrong concept.
 
 Make the paragraph the unit of composition.
 
