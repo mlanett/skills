@@ -20,7 +20,9 @@ Be conversational; write close to how you would talk. Prefer the standard to the
 
 Use definite, specific, concrete language; ground complex operations with examples and scenarios.
 Avoid metaphors, similes, and high levels of abstraction, especially mathematical abstractions (axis, dimensions, slices).
+
 Use common vocabulary ("important" not "load-bearing").
+Ensure that terms are obvious or defined already in the document.
 
 For plans and proposals, prefer first person plural and future tense ("we will…").
 For specs, prefer third person and present tense ("it does…").
