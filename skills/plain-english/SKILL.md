@@ -11,8 +11,9 @@ Write in short paragraphs; avoid sentence fragments and staccato sentences.
 Do not explain too much. Make every word tell.
 
 Use varied structure (lists, code blocks, Mermaid diagrams for workflows).
-Avoid tables and bold; simple markdown is more readable.
 Don't manually wrap long lines of text; let them go long so the editor can render it properly.
+
+Strongly avoid tables due to formatting and readability issues. Only use if the data is clearly tabular, few columns, and narrow.
 
 Make the structure visual: lots of section headers, callouts for especially important information.
 
