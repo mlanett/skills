@@ -1,6 +1,6 @@
 ---
 name: plain-english
-description: Use when writing human-oriented documents.
+description: Write in plain english.
 credits: Inspired by [Jacob Kaplan-Moss](https://jacobian.org/2009/nov/11/technical-style/), Strunk & White's Elements of Style, and [Matt Pocock](https://github.com/mattpocock/skills)'s writing-beats skill.
 ---
 
