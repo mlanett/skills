@@ -9,6 +9,11 @@ description: Apply a consistent, approachable structure to design system specs a
 
 Sections in order. The spec reads top-down: high-level first, then details, then operational tail.
 
+The order is a grounding ladder: each section only uses concepts the reader already has.
+*Goals* establishes the problem, *Concepts* names the models and workflows one line each, *Overview* shows how they fit together, and *Summaries* puts the artifacts on the page.
+By the time the reader reaches the detailed sections, every term those sections depend on has already been introduced.
+Keep this property when you reorder sections or add new ones. See the *plain-english* skill for grounding in general.
+
 ### Header
 
 - Table of contents.
@@ -99,6 +104,21 @@ When restructuring an existing spec, this sequence is usually faster than readin
 3. Extract the artifacts. Pull the proto messages, endpoints, and DDL into *Summaries*. The detailed *Models* / *Endpoints* / *Data storage* sections then explain them; the summary section just shows them.
 4. Spot cross-domain content. Anything specifying behavior of another domain → propose a sibling spec and reduce the originating section to a one-line link.
 5. Write Goals last (often). Existing specs frequently lack a clean problem statement because the author was deep in the design when they wrote it. Drafting *Goals* after seeing the rest reorganized is often easier than drafting it first.
+
+## Red flags
+
+Each of these is a symptom. The fix lives in the section that governs it.
+
+- A decision with no *Tradeoff*. Every architectural choice gives something up; if nothing was given up, it was not a decision.
+- A *Rejected alternatives* section. Those belong in the *Why* of the decision they argue for.
+- Error branches in the *Overview* diagram. The reader cannot see the shape of the system through them.
+- A step list in *Processes and workflows* that does not walk the same branches, in the same order, as the diagram above it.
+- A flowchart branch that stops without reaching a labeled success or a specific error.
+- A section that specifies another domain's behavior. Extract a sibling spec and leave a one-line link.
+- *Goals* that describe the system instead of the need it answers. *Problem* should make sense to someone who has not seen the proposal.
+- A detailed section that explains an artifact the reader has not seen yet. Put the artifact in *Summaries* first.
+- A test that references no spec section. Either the test is unmotivated or the spec is missing a claim.
+- Bold-as-heading, ASCII diagrams, or Title Case headings. See *Naming and formatting conventions*.
 
 ## Notes
 
