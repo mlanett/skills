@@ -9,10 +9,10 @@ description: Apply a consistent, approachable structure to design system specs a
 
 Sections in order. The spec reads top-down: high-level first, then details, then operational tail.
 
-The order is a grounding ladder: each section only uses concepts the reader already has.
-*Goals* establishes the problem, *Concepts* names the models and workflows one line each, *Overview* shows how they fit together, and *Summaries* puts the artifacts on the page.
-By the time the reader reaches the detailed sections, every term those sections depend on has already been introduced.
-Keep this property when you reorder sections or add new ones. See the *plain-english* skill for grounding in general.
+The order follows the reader: each section only uses concepts that an earlier section explained.
+*Goals* states the problem, *Concepts* names the models and workflows one line each, *Overview* shows how they fit together, and *Summaries* puts the artifacts on the page.
+By the time the reader reaches the detailed sections, every term those sections use has already been explained.
+Keep this property when you reorder sections or add new ones. See the *plain-english* skill for the general rule.
 
 ### Header
 
