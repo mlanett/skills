@@ -52,5 +52,6 @@ Make assertions positive.
 Avoid self-negation ("it's not X, it's Y") unless there is strong reason to believe that the reader is thinking about the wrong concept.
 The test is whether a reader would plausibly assume the negated thing; in specs, many contrasts pass it.
 What fails the test: the same negation repeated within a sentence or paragraph, negation as pure emphasis, and leading with the negative when the positive claim should come first.
+Always keep normative language (must, must not, shall, never) at full strength when rephrasing, so that we do not change any contracts.
 
 Revise and rewrite.
