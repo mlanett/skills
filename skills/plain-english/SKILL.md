@@ -16,10 +16,14 @@ Write in short paragraphs; avoid sentence fragments and staccato sentences.
 
 Do not explain too much. Make every word tell.
 
+State each fact fully once, in its home section; elsewhere, link to it rather than restating it.
+A summary map, a self-contained entry (an open question, a scenario), or a brief top-level statement above the detail section may legitimately restate.
+
 Use varied structure (lists, code blocks, Mermaid diagrams for workflows).
 Don't manually wrap long lines of text; let them go long so the editor can render it properly.
 
 Strongly avoid tables due to formatting and readability issues. Only use if the data is clearly tabular, few columns, and narrow.
+A table has failed when its cells hold prose, or when it needs notes underneath re-explaining its rows; convert it to a list and fold the notes into the items.
 
 Make the structure visual: lots of section headers, callouts for especially important information.
 
@@ -45,5 +49,7 @@ Choose a suitable design and hold to it.
 
 Make assertions positive.
 Avoid self-negation ("it's not X, it's Y") unless there is strong reason to believe that the reader is thinking about the wrong concept.
+The test is whether a reader would plausibly assume the negated thing; in specs, many contrasts pass it.
+What fails the test: the same negation repeated within a sentence or paragraph, negation as pure emphasis, and leading with the negative when the positive claim should come first.
 
 Revise and rewrite.
