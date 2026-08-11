@@ -20,7 +20,8 @@ State each fact fully once, in its home section; elsewhere, link to it rather th
 A summary map, a self-contained entry (an open question, a scenario), or a brief top-level statement above the detail section may legitimately restate.
 
 Use varied structure (lists, code blocks, Mermaid diagrams for workflows).
-Don't manually wrap long lines of text; let them go long so the editor can render it properly.
+Write new lines unwrapped; let them go long so the editor can render it properly.
+When editing an existing document, keep its wrapping style so the diff shows only real changes.
 
 Strongly avoid tables due to formatting and readability issues. Only use if the data is clearly tabular, few columns, and narrow.
 A table has failed when its cells hold prose, or when it needs notes underneath re-explaining its rows; convert it to a list and fold the notes into the items.
