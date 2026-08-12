@@ -1,6 +1,6 @@
 ---
 name: glossary
-description: Maintain a project glossary — the canonical vocabulary for a repo's domain. Use when a term is coined, sharpened, or disputed, or when a writing skill needs canonical vocabulary.
+description: Maintain the project glossary (docs/glossary.md) — the canonical vocabulary for a repo's domain. Use when a term is coined, sharpened, or disputed, or when a writing skill needs canonical vocabulary.
 credits: Adapted from [Matt Pocock](https://github.com/mattpocock/skills)'s domain-modeling skill, with the ADR half dropped.
 ---
 
@@ -19,12 +19,15 @@ Create the file lazily — when the first term is resolved, not before.
 ## Entry format
 
 ```md
-**Quote**:
+### Quote
+
 A priced snapshot of a purchase, minted by `CreateQuote` and redeemable at most once.
-_Avoid_: offer, estimate
+
+*Aliases to avoid*: offer, estimate.
 ```
 
-- Be opinionated. When multiple words exist for the same concept, pick the best one and list the others under `_Avoid_`.
+- Each term is a heading, so other documents can deep-link its anchor (e.g. `glossary.md#tombstone`).
+- Be opinionated. When multiple words exist for the same concept, pick the best one and list the others in the *Aliases to avoid* line.
 - Keep definitions tight: one or two sentences saying what the thing IS, not what it does.
 - Only include terms specific to this project. General programming concepts (timeouts, retries, error types) don't belong, even when the project uses them heavily.
 - The glossary holds language and nothing else: no implementation detail, no decisions, no specs.
