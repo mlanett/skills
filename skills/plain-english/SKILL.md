@@ -41,6 +41,13 @@ When a concept has a name, give the idea and the name at the same time.
 Decide before you write which concepts the reader brings and which the document explains.
 When a point needs a concept you have not explained, either explain it in an earlier point or add it to what the reader must bring.
 
+When editing an existing document, treat a term as already explained when the document defines it, links to a definition of it, or shares it with the surrounding documents as standard vocabulary.
+A project glossary (see the glossary skill) defines its terms for every document in the repo.
+Explain a term only when no document the reader can reach defines it.
+
+Treat named things as identifiers: decision titles, section names, quoted phrases from other documents, code-formatted terms, and recurring structural labels (like a spec's "Why." rationale paragraphs).
+Reword the prose around them; keep the names themselves verbatim, since other documents refer to them.
+
 For plans and proposals, prefer first person plural and future tense ("we will…").
 For specs, prefer third person and present tense ("it does…").
 
