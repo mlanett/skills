@@ -1,6 +1,6 @@
 ---
 name: plain-english
-description: Write in plain english.
+description: Write in plain english. Use for all writing in this repo — specs, proposals, PR descriptions, review findings, and any other prose.
 credits: Inspired by [Jacob Kaplan-Moss](https://jacobian.org/2009/nov/11/technical-style/), Strunk & White's Elements of Style, and [Matt Pocock](https://github.com/mattpocock/skills)'s writing-beats skill.
 ---
 
