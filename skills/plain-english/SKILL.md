@@ -20,6 +20,8 @@ State each fact fully once, in its home section; elsewhere, link to it rather th
 A summary map, a self-contained entry (an open question, a scenario), or a brief top-level statement above the detail section may legitimately restate.
 
 Use varied structure (lists, code blocks, Mermaid diagrams for workflows).
+Use real headings (`#### Heading`), not double-emphasis pseudo-headings (`**Heading**`).
+Always use Mermaid for diagrams, never ASCII art.
 Write new lines unwrapped; let them go long so the editor can render it properly.
 When editing an existing document, keep its wrapping style so the diff shows only real changes.
 
