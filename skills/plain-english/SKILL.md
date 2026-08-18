@@ -30,7 +30,7 @@ A table has failed when its cells hold prose, or when it needs notes underneath 
 
 Make the structure visual: lots of section headers, callouts for especially important information.
 
-Be conversational; write close to how you would talk. Prefer the standard to the offbeat.
+Be conversational; write close to how you would talk. Prefer the standard to the offbeat. Rewrite paraprosdokians.
 
 Use definite, specific, concrete language; ground complex operations with examples and scenarios.
 Avoid metaphors, similes, and high levels of abstraction, especially mathematical abstractions (axis, dimensions, slices).
