@@ -63,3 +63,5 @@ Avoid negative parallelism or self-negation unless there is strong reason to bel
 The test is whether a reader would plausibly assume the negated thing; in specs, many contrasts pass it.
 What fails the test: the same negation repeated within a sentence or paragraph, negation as pure emphasis, and leading with the negative when the positive claim should come first.
 Always keep normative language (must, must not, shall, never) at full strength when rephrasing, so that we do not change any contracts.
+
+Rewrite to avoid cataphoric teasers and artificial surprises or false urgency.
