@@ -52,12 +52,9 @@ Treat named things as identifiers: decision titles, section names, quoted phrase
 For plans and proposals, prefer first person plural and future tense ("we will…").
 For specs, prefer third person and present tense ("it does…").
 
-Use the active voice; it is more vigorous and direct than passive voice.
+Make assertions positive, but when a fact is genuinely negative, say so with a plainly negated verb; do not present a negative fact using positive grammar.
+No as a determiner stays only where verb negation has no natural form: existentials ("there is no pending state") and fixed terms ("no-op").
 
-Choose a suitable design and hold to it.
-
-Make assertions positive.
-Rewrite to avoid cataphoric teasers.
 Avoid negative parallelism or self-negation unless there is strong reason to believe that the reader is thinking about the wrong concept.
 The test is whether a reader would plausibly assume the negated thing; in specs, many contrasts pass it.
 What fails the test: the same negation repeated within a sentence or paragraph, negation as pure emphasis, and leading with the negative when the positive claim should come first.
