@@ -7,8 +7,8 @@ credits: Adapted from [Matt Pocock](https://github.com/mattpocock/skills)'s doma
 # Glossary
 
 A glossary is the project's dictionary: the canonical term for each concept, defined once, used everywhere.
-Code, specs, and conversation use the glossary's terms.
-Writing skills treat glossary entries as definitions the reader can reach, so documents use the terms without re-explaining them (see the plain-english skill).
+Specs, plans, code, tests, and conversation use the glossary's terms.
+Documents may use glossary entries without explaining them; a link to the glossary provides the explanation.
 
 ## The file
 
