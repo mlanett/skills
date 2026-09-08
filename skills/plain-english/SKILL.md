@@ -47,7 +47,8 @@ When editing an existing document, treat a term as already explained when the do
 A project glossary (see the glossary skill) defines its terms for every document in the repo.
 Explain a term only when no document the reader can reach defines it.
 
-Treat named things as identifiers: decision titles, section names, quoted phrases from other documents, code-formatted terms, and recurring structural labels (like a spec's "Why." rationale paragraphs). Reword the prose around them; keep the names themselves verbatim, since other documents refer to them.
+Treat named things as identifiers: decision titles, section names, quoted phrases from other documents, code-formatted terms, and recurring structural labels (like a spec's "Why." rationale paragraphs).
+Reword the prose around them; keep the names themselves verbatim, since other documents refer to them.
 
 For plans and proposals, prefer first person plural and future tense ("we will…").
 For specs, prefer third person and present tense ("it does…").
