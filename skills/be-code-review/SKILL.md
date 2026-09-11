@@ -1,6 +1,8 @@
 ---
 name: be-code-review
 description: Use this skill to guide an adversarial code review of a diff for "back-end" services.
+disable-model-invocation: true
+model: sonnet
 ---
 
 # Back-end Code Review
