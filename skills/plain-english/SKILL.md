@@ -44,6 +44,11 @@ Say what you mean: when a literal phrase is available, use it.
 Make the actor the subject and its action the verb.
 A thing may be the subject of a state verb ("a pack has a price"); an action belongs to the person or system that performs it ("the pack sells three visits" hides that we sell packs; write "we sell a pack of three visits").
 
+Put a hypothetical in a conditional clause, not in a relative clause on a noun.
+"A target the venue withdraws from the option stays redeemable" makes the reader hold "a target" through a clause about the venue before reaching its verb; write "even if the venue withdraws a target from the option, that target stays redeemable".
+The test is whether the clause describes an event that may happen; a clause that only identifies which thing is meant ("the option the pack was sold under") stays a relative clause.
+When the condition and the consequence each need their own qualifier, give each its own sentence rather than nesting one clause inside another.
+
 For plans and proposals, prefer first person plural and future tense ("we will…").
 For specs, prefer third person and present tense ("it does…").
 
