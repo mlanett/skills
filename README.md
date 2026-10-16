@@ -5,6 +5,7 @@
 - be-code-review: Use to guide an adversarial code review of a diff for back-end services.
 - distributed-design-review: Use to review the design of a distributed system — failure modes, contracts, invariants, and recovery paths.
 - plain-english: Use when writing human-oriented documents, specs, or TDDs.
+- pr-review-loop: Use to drive a PR from draft through be-code-review and the review bot's comments to ready for review.
 
 ## Installation
 
