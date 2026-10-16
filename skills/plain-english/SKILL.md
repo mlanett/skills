@@ -38,11 +38,10 @@ Rewrite to avoid cataphoric teasers and artificial surprises or false urgency.
 
 Use definite, specific, concrete language; ground complex operations with examples and scenarios.
 Avoid metaphors, similes, and high levels of abstraction, especially mathematical abstractions (axis, dimensions, slices).
-Mannered prose substitutes metaphor and flourish for direct statement: "a dial worth turning" for "a parameter worth varying", "this point earns its keep" for "this point still matters".
-The phrases exist to display the writer, not to convey the idea, and readers can tell; they make the reader work harder so the writer can perform, and they are imprecise, because a metaphor drags in connotations the writer did not choose and cannot control.
+Mannered prose substitutes metaphor and flourish for direct statement; this is imprecise, because it drags in connotations the writer did not choose and cannot control.
 Say what you mean: when a literal phrase is available, use it.
+A thing may be the subject of a *state* verb, but an action belongs to the person or system that performs it.
 Make the actor the subject and its action the verb.
-A thing may be the subject of a state verb ("a pack has a price"); an action belongs to the person or system that performs it ("the pack sells three visits" hides that we sell packs; write "we sell a pack of three visits").
 
 Put a hypothetical in a conditional clause, not in a relative clause on a noun.
 "A target the venue withdraws from the option stays redeemable" makes the reader hold "a target" through a clause about the venue before reaching its verb; write "even if the venue withdraws a target from the option, that target stays redeemable".
