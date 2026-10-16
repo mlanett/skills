@@ -6,27 +6,61 @@ model: sonnet
 
 # Back-end Code Review
 
-This reviews a **diff**, and looks for failures this pull request causes. You can answer every pillar below by reading the changed lines. Questions about the system as a whole — its failure modes, its contracts with peers, its recovery paths — belong to `distributed-design-review`. Questions about the repository as it stands — inconsistencies between one place and another, accumulated drift no single diff introduced — belong to `repo-audit`.
+This skill describes what a review of a **diff** judges: whether the change causes failures, and whether it breaks the project's specs and conventions.
+It says what the review looks for and how it classifies what it finds.
+The skill or prompt that runs the review decides how to report the findings, for example as comments on a pull request or as one part of a larger assessment.
 
-Every file in the diff is a subject of the review: build pins, configuration, and migrations as much as code. A moved version pin or a changed default is a contract change and gets the same scrutiny as a changed function. This rule directs attention, not reporting — a routine file earns silence (see [Reporting](#reporting)).
+## Scope
+
+The diff is both the subject of the review and its limit.
+Every question below can be answered from the changed lines.
+The Efficiency and Testability questions ask what the changes *introduced* and whether the *new or modified* code is tested, so without a diff the review has no point at which it is finished.
+This skill applies only to a diff.
+
+Every file in the diff is in scope: build pins, configuration, and migrations as well as code.
+A moved version pin or a changed default changes a contract, so it gets the same scrutiny as a changed function.
+
+The review judges what tools cannot.
+A defect that a linter, formatter, type checker, or architecture test already catches is outside its scope.
+
+Two other skills judge what a diff cannot show:
+
+- `distributed-design-review` judges the system as a whole: its failure modes, its contracts with peers, and its recovery paths.
+- `repo-audit` judges the repository as it stands: inconsistencies between one place and another, and drift that built up across many diffs, none of which introduced it alone.
+
+## Findings
+
+The result of the review is a list of findings.
+A file with nothing wrong in it contributes nothing to that list.
+Each finding is one of two kinds:
+
+- a **violation**: the code is wrong, or it breaks a documented standard;
+- a **judgement call**: a reasonable reviewer could disagree.
 
 ## Pillars
 
-Review the changed lines against each pillar.
+The review judges the changed lines against each of the following questions, which this skill calls pillars.
 
-- **Adherence to Spec.** Does the code do what the spec says, and does the spec cover all of it? Name any decision the spec does not account for. When the diff changes a spec, the spec is under review too — see [Spec Consistency](#spec-consistency). A dedicated migration pull request may document a column's fill and read contract without implementing it, so look for that code in the pull requests beside it. When the spec names an exact identifier — a proto package or type, a column, a metric name, a version — search the diff for that string. A named identifier is checkable by exact match, and a mismatch is a finding even when the behavior looks right.
+- **Adherence to Spec.** Does the code do what the spec says, and does the spec cover everything the code does?
+   - A decision in the code that the spec does not account for is a finding.
+   - When the diff changes a spec, the spec is under review as well; see [Spec Consistency](#spec-consistency).
+   - When the spec names an exact identifier, such as a proto package or type, a column, a metric name, or a version, the diff must use that exact string.
+   - Note that specs, code, and migrations may be in separate diffs.
 
-- **Correctness.** Does the code achieve its stated purpose, free of bugs and logical errors? Execute every constraint, validation, or guard the diff adds against the inputs it must reject: absent, null, empty, and partial values, one conjunct at a time. SQL `CHECK` passes when it evaluates to NULL, so a condition on a missing JSON key admits the row it looks like it rejects. For each entrypoint the diff adds or changes, list the business invariants sibling entrypoints enforce on the same data, and check the new path enforces the same set. Falling through to a database constraint is a gap, not a defense: the rejection surfaces as an internal error, and silent coercions (rounding, truncation) pass it entirely.
+- **Correctness.** Does the code do what it is meant to do, without bugs or logical errors?
+   - A constraint, validation, or guard is correct only if it rejects every input it must reject: an absent value, a null, an empty value, and a partial value.
+   - A new or changed entrypoint is correct only if it enforces every business invariant that the other entrypoints enforce on the same data.
+   - A database constraint does not make up for a missing check because it surfaces as an internal error.
 
 - **Distribution.** Does the code follow good distributed-systems practice?
    - Does it state the latencies and timeouts it expects?
-   - Does it use circuit breakers in hot API call paths?
+   - Does it use circuit breakers on high-traffic API call paths?
    - Does it support idempotency and resumability?
-   - Does it survive its own rollout? While this change deploys, the previous build keeps writing state that this diff's code reads. Name the states only that window creates, and check that every read path the diff adds has an exit for them. This asks what this pull request breaks on its way in; migration safety as a design question belongs to `distributed-design-review`.
+   - Does it keep working while it is being deployed? Until the deploy finishes, servers running the previous build keep writing state that this diff's code reads.
 
 - **Maintainability.** Is the code clear, modular, and structured the way the code around it is, so the next person can change it?
 
-- **Readability.** Does the code carry a comment wherever one is needed, and follow the project's coding style?
+- **Readability.** Does the code have a comment wherever one is needed, and does it follow the project's coding style?
 
 - **Efficiency.** Do the changes introduce a performance bottleneck or waste a resource?
 
@@ -34,48 +68,53 @@ Review the changed lines against each pillar.
 
 - **Edge Cases and Error Handling.** Does the code handle the edge cases and errors it can meet?
 
-- **Testability.** Do tests cover the new and modified code? Passing preflight checks does not settle this. Suggest the test cases that would improve coverage or robustness.
+- **Testability.** Do tests cover the new and modified code?
+   - A Testability finding names the test cases that would improve coverage or robustness.
 
-## Hand Off to a Design Review
+## When to Suggest a Design Review
 
-Those four distribution questions are the right depth for a diff. Hand off to `distributed-design-review` when the change:
+The four Distribution questions go as deep as a review of a diff should.
+The review also judges whether the change needs a `distributed-design-review` as well.
+It does when the change does any of the following:
 
-- calls something this service does not own, or stops calling it;
-- adds work that is queued, retried, scheduled, or otherwise finishes after the response;
-- alters a schema, event format, or wire contract;
-- alters what happens under load or when a dependency fails.
+- it calls something this service does not own, or stops calling it;
+- it adds work that finishes after the response, such as work that is queued, retried, or scheduled;
+- it changes a schema, an event format, or a wire contract;
+- it changes how the service behaves under load or when a dependency fails.
+
+When the change needs one, the result of the review includes a suggestion to also run `distributed-design-review`.
+
+## Project Conventions
+
+`AGENTS.md` (steerage) and `CONTRIBUTING.md` (conventions) hold the project's standing rules, and both apply to every change.
+When the diff touches something a rule governs, such as a DAO method, a metric, a domain import, a name with a unit suffix, or a version pin, the diff must follow that rule.
+This review exists to catch the rules that live only in prose.
+
+A diff that breaks a stated convention is a **violation**, the same as a diff that breaks its spec.
+The finding quotes the rule and points at the line that breaks it.
 
 ## Spec Consistency
 
 *Trigger: the diff adds or changes a document under `docs/specs/`.*
 
-Adherence to Spec asks whether the code matches its spec. This section asks whether the spec matches the specs around it. A spec that contradicts its neighbours is wrong in the same way code that contradicts its spec is wrong, and the diff that introduces the contradiction is where it is cheapest to fix, while the author still has both documents in mind.
+The Adherence to Spec pillar asks whether the code matches its spec.
+This section asks whether the changed spec matches the specs around it.
+A spec that contradicts its neighbours is wrong in the same way that code which contradicts its spec is wrong.
+The diff that introduces the contradiction is the cheapest place to fix it, because the author still has both documents in mind.
 
-Bound the review to the changed spec's **neighbours**, not to the spec tree:
+The review compares the changed spec with its **neighbours** only:
 
 - the specs it links to, and the specs that link to it;
-- the glossary, for any term it defines, uses, or redefines;
-- any spec describing the same peer, contract, table, or lifecycle.
+- the glossary, for any term the spec defines, uses, or redefines;
+- any spec that describes the same peer, contract, table, or lifecycle.
 
-Within that neighbourhood, look for:
+Among the neighbours, the review looks for four kinds of defect:
 
-- **Contradicted claims.** Two specs describing the same call, state machine, or guarantee differently. A peer contract that one document calls synchronous and another gives an asynchronous fallback is the same defect as code that ignores its spec.
-- **Terms that drifted.** A word used with a meaning the glossary does not carry, or carries differently. The `writing-specs` skill requires canonical vocabulary and a glossary update in the same change.
-- **Restated decisions with different values.** The same threshold, default, or rate written twice and now disagreeing. Prefer a reference over a second copy.
-- **Stale claims about other documents.** A conformance note, status line, or "see X" that describes a state of affairs no longer true.
+- **Contradicted claims.** Two specs describe the same call, state machine, or guarantee differently.
+- **Terms that drifted.** A spec uses a word with a meaning the glossary does not give it, or gives it differently.
+- **Restated decisions with different values.** The same threshold, default, or rate appears in two places, and the two copies now disagree.
+- **Stale claims about other documents.** A conformance note, a status line, or a "see X" describes something that is no longer true.
 
-Report a contradiction as a **violation** even when you cannot tell which side is wrong — that judgement belongs to the author. Name both sides and quote each. Report a **judgement call** where two specs merely emphasize differently, or where duplication has not yet diverged.
-
-Checking every spec against every other spec is a sweep, and belongs to `repo-audit`. This section covers the neighbourhood of one change.
-
-## Reporting
-
-Report findings, not coverage. A pillar with nothing to say gets no section.
-
-Report each defect once, under the most applicable pillar.
-
-Mark each finding as a **violation** — the code is wrong, or breaks a documented standard — or a **judgement call**, where a reasonable reviewer could disagree. Skip anything a linter, formatter, or type checker already catches.
-
-## Scope Boundary
-
-The diff is both the subject of this review and the bound on it. Two pillars are defined in terms of it: Efficiency asks what the changes *introduced*, and Testability asks about *new or modified* code. A review with no diff therefore has no stopping condition. Point this skill at a diff, and use `repo-audit` for a whole repository, since it carries its own bounding mechanism.
+A contradiction is a **violation** even when the review cannot tell which side is wrong; the author decides that.
+The finding names both sides and quotes each.
+When two specs only emphasize different things, or when the same content appears in two places but the copies still agree, the finding is a **judgement call**.
