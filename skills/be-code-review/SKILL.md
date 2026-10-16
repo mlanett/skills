@@ -6,17 +6,31 @@ model: sonnet
 
 # Back-end Code Review
 
-This reviews a **diff**, and looks for failures this pull request causes. You can answer every pillar below by reading the changed lines. Questions about the system as a whole — its failure modes, its contracts with peers, its recovery paths — belong to `distributed-design-review`. Questions about the repository as it stands — inconsistencies between one place and another, accumulated drift no single diff introduced — belong to `repo-audit`.
+This reviews a **diff**, and looks for failures this pull request causes.
+You can answer every pillar below by reading the changed lines.
+Questions about the system as a whole — its failure modes, its contracts with peers, its recovery paths — belong to `distributed-design-review`.
+Questions about the repository as it stands — inconsistencies between one place and another, accumulated drift no single diff introduced — belong to `repo-audit`.
 
-Every file in the diff is a subject of the review: build pins, configuration, and migrations as much as code. A moved version pin or a changed default is a contract change and gets the same scrutiny as a changed function. This rule directs attention, not reporting — a routine file earns silence (see [Reporting](#reporting)).
+Every file in the diff is a subject of the review: build pins, configuration, and migrations as much as code.
+A moved version pin or a changed default is a contract change and gets the same scrutiny as a changed function.
+This rule directs attention, not reporting — a routine file earns silence (see [Reporting](#reporting)).
 
 ## Pillars
 
 Review the changed lines against each pillar.
 
-- **Adherence to Spec.** Does the code do what the spec says, and does the spec cover all of it? Name any decision the spec does not account for. When the diff changes a spec, the spec is under review too — see [Spec Consistency](#spec-consistency). A dedicated migration pull request may document a column's fill and read contract without implementing it, so look for that code in the pull requests beside it. When the spec names an exact identifier — a proto package or type, a column, a metric name, a version — search the diff for that string. A named identifier is checkable by exact match, and a mismatch is a finding even when the behavior looks right.
+- **Adherence to Spec.** Does the code do what the spec says, and does the spec cover all of it?
+Name any decision the spec does not account for.
+When the diff changes a spec, the spec is under review too — see [Spec Consistency](#spec-consistency).
+A dedicated migration pull request may document a column's fill and read contract without implementing it, so look for that code in the pull requests beside it.
+When the spec names an exact identifier — a proto package or type, a column, a metric name, a version — search the diff for that string.
+A named identifier is checkable by exact match, and a mismatch is a finding even when the behavior looks right.
 
-- **Correctness.** Does the code achieve its stated purpose, free of bugs and logical errors? Execute every constraint, validation, or guard the diff adds against the inputs it must reject: absent, null, empty, and partial values, one conjunct at a time. SQL `CHECK` passes when it evaluates to NULL, so a condition on a missing JSON key admits the row it looks like it rejects. For each entrypoint the diff adds or changes, list the business invariants sibling entrypoints enforce on the same data, and check the new path enforces the same set. Falling through to a database constraint is a gap, not a defense: the rejection surfaces as an internal error, and silent coercions (rounding, truncation) pass it entirely.
+- **Correctness.** Does the code achieve its stated purpose, free of bugs and logical errors?
+Execute every constraint, validation, or guard the diff adds against the inputs it must reject: absent, null, empty, and partial values, one conjunct at a time.
+SQL `CHECK` passes when it evaluates to NULL, so a condition on a missing JSON key admits the row it looks like it rejects.
+For each entrypoint the diff adds or changes, list the business invariants sibling entrypoints enforce on the same data, and check the new path enforces the same set.
+Falling through to a database constraint is a gap, not a defense: the rejection surfaces as an internal error, and silent coercions (rounding, truncation) pass it entirely.
 
 - **Distribution.** Does the code follow good distributed-systems practice?
    - Does it state the latencies and timeouts it expects?
@@ -36,6 +50,12 @@ Review the changed lines against each pillar.
 
 - **Testability.** Do tests cover the new and modified code? Passing preflight checks does not settle this. Suggest the test cases that would improve coverage or robustness.
 
+## Project Conventions
+
+Two files hold the project's standing rules: `AGENTS.md` (steerage) and `CONTRIBUTING.md` (conventions). Both apply to every change. Read them. When the diff touches something a rule governs — a DAO method, a metric, a domain import, a name with a unit suffix, a version pin — check the diff against that rule.
+
+Breaking a stated convention is a **violation**. Report it the way you report a broken spec: quote the rule, then point at the line that breaks it. Skip a rule that a linter or an architecture test already enforces (see [Reporting](#reporting)). A rule that lives only in prose is the one this review exists to catch.
+
 ## Hand Off to a Design Review
 
 Those four distribution questions are the right depth for a diff. Hand off to `distributed-design-review` when the change:
@@ -47,9 +67,11 @@ Those four distribution questions are the right depth for a diff. Hand off to `d
 
 ## Spec Consistency
 
+Changes to specs should be consistent with related specs.
+
 *Trigger: the diff adds or changes a document under `docs/specs/`.*
 
-Adherence to Spec asks whether the code matches its spec. This section asks whether the spec matches the specs around it. A spec that contradicts its neighbours is wrong in the same way code that contradicts its spec is wrong, and the diff that introduces the contradiction is where it is cheapest to fix, while the author still has both documents in mind.
+A spec that contradicts its neighbours is wrong.
 
 Bound the review to the changed spec's **neighbours**, not to the spec tree:
 
@@ -78,4 +100,7 @@ Mark each finding as a **violation** — the code is wrong, or breaks a document
 
 ## Scope Boundary
 
-The diff is both the subject of this review and the bound on it. Two pillars are defined in terms of it: Efficiency asks what the changes *introduced*, and Testability asks about *new or modified* code. A review with no diff therefore has no stopping condition. Point this skill at a diff, and use `repo-audit` for a whole repository, since it carries its own bounding mechanism.
+The diff is both the subject of this review and the bound on it.
+Two pillars are defined in terms of it: Efficiency asks what the changes *introduced*, and Testability asks about *new or modified* code.
+A review with no diff therefore has no stopping condition.
+Point this skill at a diff, and use `repo-audit` for a whole repository, since it carries its own bounding mechanism.
