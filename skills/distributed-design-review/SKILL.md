@@ -40,7 +40,7 @@ Items marked *opinion* are house defaults rather than neutral checks. Raise a de
 *Trigger: callers can submit the same work twice.* Referenced by Time, Observability, and Security below.
 
 - Each operation carries an identity, minted at a defined point, which makes duplicate submission _safe_.
-   e.g. externally-supplied id or name, or system-provided.
+  e.g. externally-supplied id or name, or system-provided.
 - The identity stays stable across operations that should be retried, and distinct across operations that should stay separate.
 - Querying an operation by identity returns a rich status — unknown, in progress, or complete with outcome.
    This makes lost responses _recoverable_.
@@ -62,7 +62,7 @@ Items marked *opinion* are house defaults rather than neutral checks. Raise a de
 - The system persists state durably, so work resumes after interruption or outage.
 - The system resumes incomplete operations.
 - The system applies admission control or backpressure to govern how fast deferred work re-enters the active set.
-   e.g. backoff, jitter, bulkhead, and scheduling.
+  e.g. backoff, jitter, bulkhead, and scheduling.
 - The system can shed work early to prevent overload, where deliberately permitted.
 - *Opinion:* notifications are optimizations; polling is what guarantees delivery.
 
@@ -71,7 +71,7 @@ Items marked *opinion* are house defaults rather than neutral checks. Raise a de
 Defending against what we depend on. *Trigger: the design calls something it does not own.*
 
 - For each dependency, the system defines circuit-breaker, fallback, retry, and timeout behavior.
-   Fallback terminology: fail-open = continue; fail-closed = stop.
+  Fallback terminology: fail-open = continue; fail-closed = stop.
 - The system assigns trust and lifetime to each dependency's responses, e.g. authoritative, cacheable, advisory.
 - The system responds to a dependency outage with replay, reconciliation, or deliberate inaction.
 - The system handles partial degradation of a dependency, not just full outage.
@@ -82,7 +82,7 @@ Mutual promises between systems. *Trigger: an effect spans two or more systems.*
 
 - Peers agree on ordering and delivery semantics.
 - Peers state their consistency guarantee explicitly; see also Invariants.
-   *Opinion:* it is eventual unless someone paid for otherwise.
+  *Opinion:* it is eventual unless someone paid for otherwise.
 - Peers define atomicity for effects spanning two or more systems.
 - Peers agree on schema and version compatibility.
 
