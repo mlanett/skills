@@ -3,6 +3,8 @@ name: discuss
 description: Interview the user about a plan or design to reach a mutual shared design concept, asking pointed questions in batches and presenting options without recommendations. Use when the user wants to brainstorm, stress-test, talk through or discuss a plan or design.
 ---
 
+# Discuss Deeply
+
 Interview the user about every meaningful aspect of this plan or design until you reach a mutual shared design concept.
 
 Ask several questions per round, not one at a time.
