@@ -25,9 +25,9 @@ Let's put this at the top so that people who are familiar with the proposal can 
 ### High-level (read top-down)
 
 - Goals: three subsections:
-  - *Problem*: what real-world need this addresses.
-  - *Workflow*: the user-visible sequence the system supports.
-  - *Proposed system*: a one-paragraph sketch of what we are building to support the workflow.
+   - *Problem*: what real-world need this addresses.
+   - *Workflow*: the user-visible sequence the system supports.
+   - *Proposed system*: a one-paragraph sketch of what we are building to support the workflow.
 
 - Concepts: important models, endpoints, workflows. One line each.
 
@@ -46,12 +46,11 @@ Let's put this at the top so that people who are familiar with the proposal can 
 In this order:
 
 - Decisions: *architectural* decisions only. Each decision is its own subsection with:
-  - The decision itself, stated declaratively in the heading.
-  - Why: motivation, with any rejected alternatives folded in as rationale.
-  - Tradeoff: what we are giving up and why that is acceptable.
+   - The decision itself, stated declaratively in the heading.
+   - Why: motivation, with any rejected alternatives folded in as rationale.
+   - Tradeoff: what we are giving up and why that is acceptable.
 
   Keep this section scannable. If more than ~6 decisions accumulate here, you have probably mixed architectural decisions with smaller policy decisions; push the smaller ones inline near their detail.
-
 - Models and data types: request/response messages, wire types, internal sealed types, identifier formats. Forward-looking notes (e.g. "Future: campaigns") fit at the end of this section.
 - Endpoints: one subsection per endpoint or service. Describe behavior at the contract level; link out to *Processes and workflows* for full flows. Cross-service boundary endpoints (e.g. the REST contract with another service) belong here too.
 - Data storage: schema DDL with annotations. Smaller schema-related policy decisions stay inline next to the schema they govern, not in *Decisions*.
