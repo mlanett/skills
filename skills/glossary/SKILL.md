@@ -59,16 +59,6 @@ A sentence is mechanism when it names the column, table, RPC, saga step, config 
 Cut it and read the entry again: if the entry still identifies the concept, the sentence was mechanism.
 A cut sentence that states a fact no spec states is a fact in the wrong file, not a fact to delete — move it to the spec section the entry links to, in the same change or a follow-up, and say so.
 
-For example, this entry carries its mechanism:
-
-> The instant when early cancel ends for one Booking. CreateQuote computes it by subtracting the Late-Cancel Window as **local hours** on the class start in the venue's timezone, then storing the resulting instant. That is not a UTC duration: a DST spring-forward makes N local hours ≠ N elapsed hours. Stored on the Quote as part of `QuotePolicy` and copied onto Booking Policy at handoff.
-
-This one carries its meaning, and names the section that carries the mechanism:
-
-> The instant that divides an early cancel from a late one for one Booking: cancelling before it returns the Visit, cancelling at or after it spends the Visit. It is fixed at Checkout Handoff and never moves.
->
-> *Defined in: [Venue Policies — Early-Cancel Deadline](../../../docs/specs/orders/venue-policies.md#early-cancel-deadline).*
-
 ## One owning section
 
 A definition lives in one spec section, and every other document refers to it.
