@@ -39,11 +39,11 @@ Items marked *opinion* are house defaults rather than neutral checks. Raise a de
 
 *Trigger: callers can submit the same work twice.* Referenced by Time, Observability, and Security below.
 
-- Each operation carries an identity, minted at a defined point, which makes duplicate submission _safe_.
+- Each operation carries an identity, minted at a defined point, which makes duplicate submission *safe*.
   e.g. externally-supplied id or name, or system-provided.
 - The identity stays stable across operations that should be retried, and distinct across operations that should stay separate.
 - Querying an operation by identity returns a rich status — unknown, in progress, or complete with outcome.
-   This makes lost responses _recoverable_.
+  This makes lost responses *recoverable*.
 
 ## Invariants
 
