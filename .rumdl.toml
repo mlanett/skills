@@ -2,9 +2,13 @@
 # See: https://github.com/rvben/rumdl#configuration
 
 [global]
-enable = []
+# Do not set `enable`. Opt out of individual rules with `disable` instead.
 disable = ["MD013", "MD029", "MD046"]
 include = ["**/*.md", "**/*.markdown"]
+exclude = [
+  ".git/**",
+  "skills/synced/**"
+]
 
 [MD003]
 style = "atx"  # Use ATX style headings (##)
@@ -31,12 +35,12 @@ style = "ordered"
 [MD046]
 # Fenced code blocks
 
+[MD057]
+# Relative links must point to files that exist.
+enabled = true
+
 [MD060]
 # Tables in Markdown are significantly easier to read and maintain when their columns are properly aligned in source form.
-# While Markdown tables render the same regardless of spacing, aligned tables in source code:
-# Improve readability during code review
-# Make editing cells more intuitive
-# This rule enforces consistent column alignment and padding in Markdown tables, matching the behavior of popular formatters like Prettier.
 enabled = true
 style = "aligned"
 max-width = 999 # 0 = inherit from MD013's line-length but doesn't work correctly.
