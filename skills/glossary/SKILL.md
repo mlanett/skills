@@ -6,14 +6,15 @@ credits: Adapted from [Matt Pocock](https://github.com/mattpocock/skills)'s doma
 
 # Glossary
 
-A glossary is the project's dictionary: the canonical term for each concept, defined once, used everywhere.
+The glossary is the project's dictionary and index: the canonical term for each concept, defined once, used everywhere.
 Specs, plans, code, tests, and conversation use the glossary's terms.
+All important concepts are defined in the glossary.
 Documents may use glossary entries without explaining them; a link to the glossary provides the explanation.
+Each term in the glossary points to where it is defined.
 
 ## The file
 
-One glossary per repo, at `docs/GLOSSARY.md`.
-If the repo already keeps a glossary under another name (for example a legacy `docs/concepts.md`), treat that file as the glossary rather than creating a second one.
+One glossary per repo, at `docs/GLOSSARY.md`, unless the AGENTS.md says to locate it elsewhere.
 Create the file lazily — when the first term is resolved, not before.
 
 Entries sit in alphabetical order under their subheading, and the table of contents lists every entry.
@@ -43,7 +44,7 @@ A priced snapshot of one purchase selection (`checkout.quote`), redeemable at mo
 
 An entry says what a term means, so a reader can follow a sentence that uses it.
 It does not say how the system produces the thing, where it is stored, what its defaults are, or why it was decided that way.
-That is the spec's job, and the entry's *Defined in* line names the section that does it.
+Mechanism is the spec's job, and the entry's *Defined in* line names the section that does it.
 
 An entry keeps:
 
