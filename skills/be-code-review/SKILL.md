@@ -114,6 +114,7 @@ Among the neighbours, the review looks for four kinds of defect:
 - **Terms that drifted.** A spec uses a word with a meaning the glossary does not give it, or gives it differently.
 - **Restated decisions with different values.** The same threshold, default, or rate appears in two places, and the two copies now disagree.
 - **Stale claims about other documents.** A conformance note, a status line, or a "see X" describes something that is no longer true.
+- **Implementation copied into the spec.** The spec describes how the code is organized, or copies a `.proto` or upstream code, which [the spec rules](../../../docs/specs/AGENTS.md#what-belongs-and-what-does-not) keep out. A copy this diff adds is a violation; one the diff only carries forward, from before the rule, is a judgement call. Either way, name what the spec should link to instead.
 
 A contradiction is a **violation** even when the review cannot tell which side is wrong; the author decides that.
 The finding names both sides and quotes each.
